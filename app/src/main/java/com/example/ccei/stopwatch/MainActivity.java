@@ -51,22 +51,17 @@ public class MainActivity extends AppCompatActivity {
         btn_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(myTimer.isCancelled()){
-                    timer.setText("0 : 0 : 0초");
-                    progressDialogIncrement_second = 0;
-                    progressDialogIncrement_min = 0;
-                    progressDialogIncrement_hour = 0;
-                    progressDialogIncrement_second_milli = 0;
-                }
-                else{
+                if(!myTimer.isCancelled()){
                     myTimer.cancel(true);
-                    timer.setText("0 : 0 : 0초");
-                    progressDialogIncrement_second = 0;
-                    progressDialogIncrement_min = 0;
-                    progressDialogIncrement_hour = 0;
-                    progressDialogIncrement_second_milli = 0;
                     btn_toggle.setChecked(false);
                 }
+
+                timer.setText("0 : 0 : 0초");
+                progressDialogIncrement_second = 0;
+                progressDialogIncrement_min = 0;
+                progressDialogIncrement_hour = 0;
+                progressDialogIncrement_second_milli = 0;
+
             }
         });
 
